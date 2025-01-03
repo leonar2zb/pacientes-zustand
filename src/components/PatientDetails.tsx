@@ -13,5 +13,17 @@ export default function PatientDetails({ patient }: PatientDetailProps) {
             <PatientDetailsItem label='Email' data={patient.email} />
             <PatientDetailsItem label='Alta' data={patient.date.toString()} />
             <PatientDetailsItem label='Síntomas' data={patient.symptoms} />
+            <div className="flex justify-between mt-10">
+                <button
+                    type="button"
+                    className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 uppercase rounded-lg text-white font-bold">
+                    Editar
+                </button>
+                <button
+                    type="button"
+                    className="py-2 px-10 bg-red-600 hover:bg-red-700 uppercase rounded-lg text-white font-bold">
+                    Emininar
+                </button>
+            </div>
         </div>)
 }
