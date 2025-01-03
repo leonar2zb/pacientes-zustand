@@ -10,8 +10,8 @@ function App() {
           <span className="text-indigo-700">Veterinaria</span>
         </h1>
         <div className="mt-12 md:flex">
-          <PatientList />
           <PatientForm />
+          <PatientList />
         </div>
       </div>
     </>
