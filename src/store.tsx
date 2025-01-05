@@ -32,7 +32,9 @@ export const usePatientStore = create<PatientState>()(
             }))
         },
         getPatientById: (id) => {
-            console.log(`el id a editar es ${id}`)
+            set(() => ({
+                activeId: id
+            }))
         }
     })
     ))
