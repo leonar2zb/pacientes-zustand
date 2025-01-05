@@ -7,7 +7,7 @@ type PatientDetailProps = {
 }
 
 export default function PatientDetails({ patient }: PatientDetailProps) {
-    const { deletePatient } = usePatientStore()
+    const { deletePatient, getPatientById } = usePatientStore()
 
     return (
         <div className="mx-5 my-10 px-5 py-5 bg-white shadow-md rounded-xl">
@@ -20,6 +20,7 @@ export default function PatientDetails({ patient }: PatientDetailProps) {
             <div className="flex flex-col lg:flex-row gap-3 justify-between mt-10">
                 <button
                     type="button"
+                    onClick={() => getPatientById(patient.id)}
                     className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 uppercase rounded-lg text-white font-bold">
                     Editar
                 </button>
