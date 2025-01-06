@@ -27,8 +27,13 @@ export default function PatientForm() {
     }, [activeId])
 
     const registerPatient = (data: DraftPatient) => {
-        if (activeId)
+        if (activeId) {
             updatePatient(data)
+            toast('Actualizado los datos al paciente', {
+                type: 'success',
+                autoClose: 3000
+            })
+        }
         else {
             addPatient(data)
             //ver la doc para más info https://fkhadra.github.io/react-toastify/introduction
