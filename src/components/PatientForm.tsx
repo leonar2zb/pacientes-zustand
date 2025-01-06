@@ -3,6 +3,7 @@ import Error from './Error'
 import { DraftPatient } from '../types'
 import { usePatientStore } from '../store'
 import { useEffect } from 'react'
+import { toast } from 'react-toastify'
 
 export default function PatientForm() {
 
@@ -28,8 +29,13 @@ export default function PatientForm() {
     const registerPatient = (data: DraftPatient) => {
         if (activeId)
             updatePatient(data)
-        else
+        else {
             addPatient(data)
+            //ver la doc para más info https://fkhadra.github.io/react-toastify/introduction
+            toast.success('Paciente agregado correctamente', {
+                autoClose: 3000
+            })
+        }
         reset()
     }
 
